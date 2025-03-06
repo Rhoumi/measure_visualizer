@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            height: 100%;
+            width: 100%;
+            place-items: center;
+            gap: 2vmin;
+            padding: 2vmin;
+        }
+        .number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            font-size: min(30vw, 30vh);
+            font-weight: bold;
+            user-select: none;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 2vmin;
+            transition: background-color 0.2s ease;
+        }
+        .number:active {
+            background-color: rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="bars" class="number">-</div>
+        <div id="beat" class="number">-</div>
+        <div id="extra" class="number">-</div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const elements = {
+            bars: document.getElementById('bars'),
+            beat: document.getElementById('beat'),
+            extra: document.getElementById('extra')
+        };
+
+        socket.on('metronomeMessage', (msg) => {
+            elements.bars.textContent = msg.measure;
+            elements.beat.textContent = msg.beat;
+            elements.extra.textContent = msg.frac;
+        });
+    </script>
+</body>
+</html>
