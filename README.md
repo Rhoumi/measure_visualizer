@@ -6,11 +6,12 @@ requirements : nodejs
 Listen for OSC messages on /measure address composed of 3 int values [bar,beat,fraction]
 
 clone or download zip 
-`git clone https://github.com/Rhoumi/measure_visualizer/`
+```git clone https://github.com/Rhoumi/measure_visualizer/```
 
 go to the directory
-`cd measure_visualizer`
-run 
+```cd measure_visualizer```
+
+run
 ```
 npm install
 node server.js
