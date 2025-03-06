@@ -1,0 +1,26 @@
+{
+  "name": "Bubopera",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "opera",
+    "Remi Georges",
+    "Georges",
+    "Georges Man",
+    "RIM",
+    "metronome"
+  ],
+  "author": "Raphaël Forment",
+  "license": "GPL3",
+  "description": "A simple metronome message displayer (OSC)",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "express": "^4.21.2",
+    "osc": "^2.4.5",
+    "socket.io": "^4.8.1",
+    "yargs": "^17.7.2"
+  }
+}
