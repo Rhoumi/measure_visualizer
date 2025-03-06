@@ -1,7 +1,8 @@
 # measure_visualizer
 
 simple measure visualizer
-requirements : nodejs 
+requirements : nodejs
+
 Listen for OSC messages on /measure address composed of 3 int values [bar,beat,fraction]
 
 clone or download zip 
